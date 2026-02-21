@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Rocky Fitness Center — Premium gym in your city. Join now for expert training, modern equipment, and flexible membership plans." />
+  <title>Rocky Fitness Center — Unleash Your Inner Athlete</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🏋️</div>
+        <div class="nav-logo-text">
+          <span class="brand">Rocky Fitness</span>
+          <span class="tagline">Center</span>
+        </div>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="trainers.html">Trainers</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="nav-whatsapp"
+          title="Chat on WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="membership.html" class="btn btn-primary btn-sm">Join Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="classes.html">Classes</a>
+    <a href="trainers.html">Trainers</a>
+    <a href="membership.html">Membership</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="mobile-wa">
+      <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('IMG_5827.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content" style="max-width:860px;">
+        <div class="hero-badge">
+          <i class="fas fa-dumbbell"></i>
+          Premium Fitness Experience
+        </div>
+        <h1>Unleash your<br /><span>Inner Happiness</span></h1>
+        <p style="max-width:680px;">Transform your body and mind at Rocky Fitness Center. State-of-the-art equipment,
+          certified trainers, and a thriving community — all built to help you become the best version of yourself.</p>
+        <div class="hero-buttons">
+          <a href="membership.html" class="btn btn-primary btn-lg">
+            <i class="fas fa-rocket"></i> Join Now
+          </a>
+          <a href="classes.html" class="btn btn-outline-white btn-lg">
+            <i class="fas fa-play-circle"></i> Explore Classes
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="container">
+        <div class="hero-stat">
+          <div class="num">500+</div>
+          <div class="label">Active Members</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">15+</div>
+          <div class="label">Expert Trainers</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">20+</div>
+          <div class="label">Classes Weekly</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Why Choose Us</span>
+        <h2 class="section-title">Everything You Need to Succeed</h2>
+        <p class="section-subtitle">We've built an environment where every member can thrive — from day one to elite
+          performance.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Experienced Trainers</h3>
+          <p>Our certified coaches bring years of expertise across strength, cardio, yoga, and combat disciplines to
+            guide your journey.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3>Modern Equipment</h3>
+          <p>Train with the latest fitness technology — commercial-grade machines, free weights, and functional training
+            zones.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Supportive Community</h3>
+          <p>Join a motivated community that celebrates every milestone. Weekly challenges, group classes, and member
+            events all year round.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💳</div>
+          <h3>Flexible Membership</h3>
+          <p>Choose from monthly, quarterly, or annual plans — no hidden fees, no lock-ins. Cancel or upgrade anytime
+            with ease.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CLASSES PREVIEW ===== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Featured Classes</span>
+        <h2 class="section-title">Train Smarter, Not Harder</h2>
+        <p class="section-subtitle">Choose from our expertly designed programs for every fitness level and goal.</p>
+      </div>
+      <div class="classes-grid">
+        <div class="class-card">
+          <div class="class-card-img">
+            <img src="assets/class-strength.png" alt="Strength Training" loading="lazy" />
+            <div class="class-card-overlay"></div>
+            <span class="class-intensity intermediate">Intermediate</span>
+          </div>
+          <div class="class-card-body">
+            <h3>Strength Training</h3>
+            <p>Build lean muscle and boost metabolism with our progressive barbell and dumbbell programs.</p>
+            <div class="class-meta">
+              <span class="class-meta-item"><span>⏱</span> 60 min</span>
+              <span class="class-meta-item"><span>👤</span> Arjun Sharma</span>
+              <span class="class-meta-item"><span>🔥</span> 400–600 cal</span>
+            </div>
+          </div>
+        </div>
+        <div class="class-card">
+          <div class="class-card-img">
+            <img src="assets/class-cardio.png" alt="Cardio Blast" loading="lazy" />
+            <div class="class-card-overlay"></div>
+            <span class="class-intensity beginner">Beginner</span>
+          </div>
+          <div class="class-card-body">
+            <h3>Cardio Blast</h3>
+            <p>High-energy spin cycling and aerobic sessions to torch calories and improve cardiovascular fitness.</p>
+            <div class="class-meta">
+              <span class="class-meta-item"><span>⏱</span> 45 min</span>
+              <span class="class-meta-item"><span>👤</span> Priya Kapoor</span>
+              <span class="class-meta-item"><span>🔥</span> 350–500 cal</span>
+            </div>
+          </div>
+        </div>
+        <div class="class-card">
+          <div class="class-card-img">
+            <img src="assets/class-yoga.png" alt="Yoga & Flexibility" loading="lazy" />
+            <div class="class-card-overlay"></div>
+            <span class="class-intensity beginner">Beginner</span>
+          </div>
+          <div class="class-card-body">
+            <h3>Yoga & Flexibility</h3>
+            <p>Restore balance, improve posture and reduce stress through guided yoga and mobility sessions.</p>
+            <div class="class-meta">
+              <span class="class-meta-item"><span>⏱</span> 50 min</span>
+              <span class="class-meta-item"><span>👤</span> Rahul Dev</span>
+              <span class="class-meta-item"><span>🔥</span> 150–250 cal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top: 44px;">
+        <a href="classes.html" class="btn btn-primary">View All Classes <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MEMBER'S CORNER ===== -->
+  <section class="section testimonials">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Testimonials</span>
+        <h2 class="section-title">Member's Corner</h2>
+        <p class="section-subtitle">Real stories from real members who transformed their lives at Rocky Fitness Center.
+        </p>
+      </div>
+      <div class="testimonials-carousel">
+        <div class="testimonials-track">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-quote">Joining Rocky Fitness Center was the best decision of my life. I lost 14 kg in
+              4 months and the trainers were incredibly supportive throughout my journey.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">R</div>
+              <div class="testimonial-author-info">
+                <div class="name">Rahul Mehta</div>
+                <div class="meta">Member since 2023 · Mumbai</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-quote">The equipment is world-class and always maintained. I've been to many gyms but
+              Rocky Fitness has the cleanest and most complete setup I've seen in the city.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background: linear-gradient(135deg,#059669,#0891B2);">P</div>
+              <div class="testimonial-author-info">
+                <div class="name">Priya Nair</div>
+                <div class="meta">Member since 2022 · Delhi</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="testimonial-quote">The yoga and flexibility classes have completely transformed my posture.
+              Trainer Rahul is phenomenal — patient, knowledgeable, and truly passionate.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background: linear-gradient(135deg,#D97706,#DC2626);">A</div>
+              <div class="testimonial-author-info">
+                <div class="name">Anjali Singh</div>
+                <div class="meta">Member since 2023 · Bangalore</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-quote">Best gym community I've ever been part of. The monthly challenges keep me
+              motivated and the members genuinely cheer each other on. Highly recommend!</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background: linear-gradient(135deg,#6366F1,#8B5CF6);">K</div>
+              <div class="testimonial-author-info">
+                <div class="name">Karan Patel</div>
+                <div class="meta">Member since 2024 · Pune</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-quote">I was a complete beginner. Rocky Fitness made me feel welcome from day one. My
+              trainer built a personalised plan and I've never felt stronger in my life.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background: linear-gradient(135deg,#0EA5E9,#2563EB);">S</div>
+              <div class="testimonial-author-info">
+                <div class="name">Sneha Joshi</div>
+                <div class="meta">Member since 2023 · Chennai</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-quote">The Pro membership is absolutely worth every rupee. Unlimited classes,
+              nutrition guidance, and a locker room that actually feels premium. Love this place.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background: linear-gradient(135deg,#EC4899,#F43F5E);">V</div>
+              <div class="testimonial-author-info">
+                <div class="name">Vikram Reddy</div>
+                <div class="meta">Member since 2022 · Hyderabad</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" aria-label="Previous">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="carousel-dots"></div>
+        <button class="carousel-btn next" aria-label="Next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOUNDER SECTION ===== -->
+  <section class="section founder-section">
+    <div class="container">
+      <div class="founder-grid">
+        <div class="founder-image-wrap">
+          <img src="founder.jpeg" alt="Rocky Fitness Center Founder" style="object-position: top;" />
+          <div class="founder-badge">
+            <span class="years">10+</span>
+            Years of<br />Excellence
+          </div>
+        </div>
+        <div class="founder-content">
+          <span class="section-label">Meet the Founder</span>
+          <h2>Rocky Singh</h2>
+          <p class="founder-name-title">Founder & Head Trainer, Rocky Fitness Center</p>
+          <p>Rocky Singh founded this center with a simple belief: fitness should be accessible, enjoyable, and
+            transformative for everyone. With over a decade of experience in sports science and personal training, Rocky
+            built this center from the ground up.</p>
+          <p>His philosophy combines cutting-edge training methodologies with a deeply personal approach — because every
+            member's journey is unique. Today, Rocky Fitness Center stands as a benchmark for premium fitness
+            experiences.</p>
+          <p>Rocky holds certifications in Strength & Conditioning, Sports Nutrition, and Functional Movement — and
+            continues to train members personally every week.</p>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:8px;">
+            Get in Touch <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MEMBERSHIP PREVIEW ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Membership Plans</span>
+        <h2 class="section-title">Choose Your Plan</h2>
+        <p class="section-subtitle">Flexible plans built to match every goal and budget. Start today with no joining
+          fee.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-plan">Basic</div>
+          <div class="pricing-price">
+            <span class="currency">₹</span><span class="amount">999</span><span class="period">/month</span>
+          </div>
+          <p class="pricing-desc">Perfect for beginners looking to build a consistent gym habit.</p>
+          <ul class="pricing-features">
+            <li class="pricing-feature"><span class="check">✓</span> Gym Floor Access</li>
+            <li class="pricing-feature"><span class="check">✓</span> 2 Group Classes/month</li>
+            <li class="pricing-feature"><span class="check">✓</span> Locker & Shower Access</li>
+            <li class="pricing-feature"><span class="cross">✗</span> Personal Training</li>
+            <li class="pricing-feature"><span class="cross">✗</span> Nutrition Consultation</li>
+          </ul>
+          <a href="membership.html" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="pricing-card popular">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-plan">Pro</div>
+          <div class="pricing-price">
+            <span class="currency">₹</span><span class="amount">1,799</span><span class="period">/month</span>
+          </div>
+          <p class="pricing-desc">Best value for dedicated members ready to see serious results.</p>
+          <ul class="pricing-features">
+            <li class="pricing-feature"><span class="check">✓</span> Unlimited Gym Access</li>
+            <li class="pricing-feature"><span class="check">✓</span> Unlimited Group Classes</li>
+            <li class="pricing-feature"><span class="check">✓</span> 2 PT Sessions/month</li>
+            <li class="pricing-feature"><span class="check">✓</span> Nutrition Consultation</li>
+            <li class="pricing-feature"><span class="cross">✗</span> Guest Passes</li>
+          </ul>
+          <a href="membership.html" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-plan">Elite</div>
+          <div class="pricing-price">
+            <span class="currency">₹</span><span class="amount">2,999</span><span class="period">/month</span>
+          </div>
+          <p class="pricing-desc">The complete premium experience for elite athletes and serious performers.</p>
+          <ul class="pricing-features">
+            <li class="pricing-feature"><span class="check">✓</span> 24/7 Unlimited Access</li>
+            <li class="pricing-feature"><span class="check">✓</span> All Classes Included</li>
+            <li class="pricing-feature"><span class="check">✓</span> 8 PT Sessions/month</li>
+            <li class="pricing-feature"><span class="check">✓</span> Nutrition & Diet Plan</li>
+            <li class="pricing-feature"><span class="check">✓</span> 4 Guest Passes/month</li>
+          </ul>
+          <a href="membership.html" class="btn btn-outline">Get Started</a>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top: 40px;">
+        <a href="membership.html" class="btn btn-primary">View All Plans <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Start Your Fitness Journey Today</h2>
+      <p>No excuses. No delays. The best time to start is now — and we're here every step of the way.</p>
+      <div class="cta-buttons">
+        <a href="membership.html" class="btn btn-primary btn-lg">
+          <i class="fas fa-rocket"></i> Join Now
+        </a>
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+          <i class="fab fa-whatsapp"></i> WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT PREVIEW ===== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">We're Here for You</h2>
+        <p class="section-subtitle">Questions? Drop us a line, visit our center, or message us on WhatsApp — we reply
+          fast.</p>
+      </div>
+      <div class="contact-preview-grid">
+        <div class="contact-info-card">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="label">Address</div>
+            <div class="value">123 Fitness Avenue, Sector 14,<br />New Delhi — 110001</div>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="label">Phone</div>
+            <div class="value">+91 98765 43210<br />Mon–Sat, 6 AM – 10 PM</div>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="label">Email</div>
+            <div class="value">hello@rockyfitness.in<br />We reply within 2 hours</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top: 36px;">
+        <a href="contact.html" class="btn btn-primary">Contact Us <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon">🏋️</div>
+            <div class="nav-logo-text">
+              <span class="brand">Rocky Fitness</span>
+              <span class="tagline">Center</span>
+            </div>
+          </a>
+          <p>Your premier destination for fitness excellence. Modern equipment, certified trainers, and a community that
+            never gives up.</p>
+          <div class="footer-social">
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/91XXXXXXXXXX" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Home</a></li>
+            <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Classes</a></li>
+            <li><a href="trainers.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Trainers</a></li>
+            <li><a href="membership.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Membership</a>
+            </li>
+            <li><a href="blog.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Classes</h4>
+          <ul class="footer-links">
+            <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Strength
+                Training</a></li>
+            <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Cardio Blast</a>
+            </li>
+            <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Yoga &
+                Flexibility</a></li>
+            <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> HIIT Training</a>
+            </li>
+            <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Boxing &
+                Combat</a></li>
+            <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Zumba Dance</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-items">
+            <div class="footer-contact-item">
+              <i class="fas fa-map-marker-alt icon"></i>
+              <span>123 Fitness Avenue, Sector 14, New Delhi — 110001</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-phone-alt icon"></i>
+              <span>+91 98765 43210</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope icon"></i>
+              <span>hello@rockyfitness.in</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-clock icon"></i>
+              <span>Mon–Sat: 6 AM – 10 PM<br />Sunday: 7 AM – 6 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Rocky Fitness Center. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="floating-wa" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

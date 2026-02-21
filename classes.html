@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Explore all fitness classes at Rocky Fitness Center — Strength, Cardio, Yoga, HIIT, Boxing & more for all levels." />
+    <title>Classes — Rocky Fitness Center</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🏋️</div>
+                <div class="nav-logo-text">
+                    <span class="brand">Rocky Fitness</span>
+                    <span class="tagline">Center</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="nav-whatsapp"
+                    title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="membership.html" class="btn btn-primary btn-sm">Join Now</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="classes.html">Classes</a>
+        <a href="trainers.html">Trainers</a>
+        <a href="membership.html">Membership</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="mobile-wa"><i class="fab fa-whatsapp"></i> Chat on
+            WhatsApp</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right" style="font-size:0.6rem"></i>
+                <span>Classes</span>
+            </div>
+            <h1>Our Fitness Classes</h1>
+            <p>Expert-led programs designed for every fitness level — from beginner to advanced.</p>
+        </div>
+    </section>
+
+    <!-- CLASSES SECTION -->
+    <section class="section">
+        <div class="container">
+            <!-- Filters -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All Classes</button>
+                <button class="filter-tab" data-filter="beginner">Beginner</button>
+                <button class="filter-tab" data-filter="intermediate">Intermediate</button>
+                <button class="filter-tab" data-filter="advanced">Advanced</button>
+            </div>
+
+            <!-- Classes Grid -->
+            <div class="classes-grid" style="grid-template-columns: repeat(3,1fr);">
+                <div class="class-card" data-level="intermediate">
+                    <div class="class-card-img">
+                        <img src="assets/class-strength.png" alt="Strength Training" loading="lazy" />
+                        <div class="class-card-overlay"></div>
+                        <span class="class-intensity intermediate">Intermediate</span>
+                    </div>
+                    <div class="class-card-body">
+                        <h3>Strength Training</h3>
+                        <p>Progressive barbell, dumbbell and machine programs to build lean muscle, increase strength
+                            and boost metabolism.</p>
+                        <div class="class-meta">
+                            <span class="class-meta-item"><span>⏱</span> 60 min</span>
+                            <span class="class-meta-item"><span>🔥</span> 400–600 cal</span>
+                            <span class="class-meta-item"><span>👤</span> Arjun Sharma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="class-card" data-level="beginner">
+                    <div class="class-card-img">
+                        <img src="assets/class-cardio.png" alt="Cardio Blast" loading="lazy" />
+                        <div class="class-card-overlay"></div>
+                        <span class="class-intensity beginner">Beginner</span>
+                    </div>
+                    <div class="class-card-body">
+                        <h3>Cardio Blast</h3>
+                        <p>High-energy spin cycling and aerobic sessions to torch calories and improve your
+                            cardiovascular endurance.</p>
+                        <div class="class-meta">
+                            <span class="class-meta-item"><span>⏱</span> 45 min</span>
+                            <span class="class-meta-item"><span>🔥</span> 350–500 cal</span>
+                            <span class="class-meta-item"><span>👤</span> Priya Kapoor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="class-card" data-level="beginner">
+                    <div class="class-card-img">
+                        <img src="assets/class-yoga.png" alt="Yoga & Flexibility" loading="lazy" />
+                        <div class="class-card-overlay"></div>
+                        <span class="class-intensity beginner">Beginner</span>
+                    </div>
+                    <div class="class-card-body">
+                        <h3>Yoga & Flexibility</h3>
+                        <p>Restore balance, improve posture and reduce stress through guided yoga flows and mobility
+                            work.</p>
+                        <div class="class-meta">
+                            <span class="class-meta-item"><span>⏱</span> 50 min</span>
+                            <span class="class-meta-item"><span>🔥</span> 150–250 cal</span>
+                            <span class="class-meta-item"><span>👤</span> Rahul Dev</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="class-card" data-level="advanced">
+                    <div class="class-card-img">
+                        <img src="IMG_5826.jpg" alt="HIIT Training" loading="lazy" style="object-position: center;" />
+                        <div class="class-card-overlay"></div>
+                        <span class="class-intensity advanced">Advanced</span>
+                    </div>
+                    <div class="class-card-body">
+                        <h3>HIIT Training</h3>
+                        <p>High-intensity interval training combining explosive movements and short rest periods for
+                            maximum fat burn.</p>
+                        <div class="class-meta">
+                            <span class="class-meta-item"><span>⏱</span> 40 min</span>
+                            <span class="class-meta-item"><span>🔥</span> 500–700 cal</span>
+                            <span class="class-meta-item"><span>👤</span> Arjun Sharma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="class-card" data-level="intermediate">
+                    <div class="class-card-img">
+                        <img src="IMG_5828.jpg" alt="Boxing & Combat" loading="lazy" />
+                        <div class="class-card-overlay"></div>
+                        <span class="class-intensity intermediate">Intermediate</span>
+                    </div>
+                    <div class="class-card-body">
+                        <h3>Boxing & Combat</h3>
+                        <p>Learn punching techniques, footwork and conditioning drills in a fun and energetic combat
+                            fitness environment.</p>
+                        <div class="class-meta">
+                            <span class="class-meta-item"><span>⏱</span> 55 min</span>
+                            <span class="class-meta-item"><span>🔥</span> 450–650 cal</span>
+                            <span class="class-meta-item"><span>👤</span> Neha Rawat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="class-card" data-level="beginner">
+                    <div class="class-card-img">
+                        <img src="IMG_5825.jpg" alt="Zumba Dance" loading="lazy" />
+                        <div class="class-card-overlay"></div>
+                        <span class="class-intensity beginner">Beginner</span>
+                    </div>
+                    <div class="class-card-body">
+                        <h3>Zumba Dance</h3>
+                        <p>A fun, upbeat dance fitness class blending Latin rhythms with easy-to-follow moves. No dance
+                            experience needed!</p>
+                        <div class="class-meta">
+                            <span class="class-meta-item"><span>⏱</span> 50 min</span>
+                            <span class="class-meta-item"><span>🔥</span> 300–450 cal</span>
+                            <span class="class-meta-item"><span>👤</span> Priya Kapoor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Ready to Join a Class?</h2>
+            <p>All classes are included with Pro and Elite memberships. Sign up today.</p>
+            <div class="cta-buttons">
+                <a href="membership.html" class="btn btn-primary btn-lg"><i class="fas fa-rocket"></i> Join Now</a>
+                <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg"><i
+                        class="fab fa-whatsapp"></i> WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="nav-logo-icon">🏋️</div>
+                        <div class="nav-logo-text"><span class="brand">Rocky Fitness</span><span
+                                class="tagline">Center</span></div>
+                    </a>
+                    <p>Your premier destination for fitness excellence. Modern equipment, certified trainers, and a
+                        community that never gives up.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/91XXXXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Home</a>
+                        </li>
+                        <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i>
+                                Classes</a></li>
+                        <li><a href="trainers.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i>
+                                Trainers</a></li>
+                        <li><a href="membership.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i>
+                                Membership</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Blog</a>
+                        </li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i>
+                                Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Classes</h4>
+                    <ul class="footer-links">
+                        <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i>
+                                Strength Training</a></li>
+                        <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Cardio
+                                Blast</a></li>
+                        <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Yoga &
+                                Flexibility</a></li>
+                        <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> HIIT
+                                Training</a></li>
+                        <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Boxing
+                                & Combat</a></li>
+                        <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Zumba
+                                Dance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-items">
+                        <div class="footer-contact-item"><i class="fas fa-map-marker-alt icon"></i><span>123 Fitness
+                                Avenue, Sector 14, New Delhi — 110001</span></div>
+                        <div class="footer-contact-item"><i class="fas fa-phone-alt icon"></i><span>+91 98765
+                                43210</span></div>
+                        <div class="footer-contact-item"><i
+                                class="fas fa-envelope icon"></i><span>hello@rockyfitness.in</span></div>
+                        <div class="footer-contact-item"><i class="fas fa-clock icon"></i><span>Mon–Sat: 6 AM – 10
+                                PM</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rocky Fitness Center. All rights reserved.</p>
+                <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="floating-wa"><i
+            class="fab fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

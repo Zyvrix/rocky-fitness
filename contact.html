@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Get in touch with Rocky Fitness Center — contact form, address, phone, email, working hours, and WhatsApp support." />
+    <title>Contact Us — Rocky Fitness Center</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🏋️</div>
+                <div class="nav-logo-text"><span class="brand">Rocky Fitness</span><span class="tagline">Center</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="nav-whatsapp"><i
+                        class="fab fa-whatsapp"></i></a>
+                <a href="membership.html" class="btn btn-primary btn-sm">Join Now</a>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a><a href="classes.html">Classes</a>
+        <a href="trainers.html">Trainers</a><a href="membership.html">Membership</a>
+        <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="mobile-wa"><i class="fab fa-whatsapp"></i> Chat on
+            WhatsApp</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right" style="font-size:0.6rem"></i>
+                <span>Contact</span>
+            </div>
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you. Drop us a message, call, or swing by!</p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- LEFT: FORM -->
+                <div class="contact-form-wrap">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you within 2 hours on business days.</p>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="e.g. Rahul Sharma" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="rahul@example.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" />
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="e.g. Membership enquiry" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="How can we help you?"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%; font-size:0.95rem;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- RIGHT: CONTACT DETAILS -->
+                <div class="contact-info-side">
+                    <h2>Contact Details</h2>
+                    <p>Reach us through any channel below — we're always happy to help!</p>
+
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info">
+                                <div class="label">Address</div>
+                                <div class="value">123 Fitness Avenue, Sector 14,<br />New Delhi — 110001, India</div>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="icon-wrap"><i class="fas fa-phone-alt"></i></div>
+                            <div class="info">
+                                <div class="label">Phone</div>
+                                <div class="value">+91 98765 43210</div>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="icon-wrap"><i class="fas fa-envelope"></i></div>
+                            <div class="info">
+                                <div class="label">Email</div>
+                                <div class="value">hello@rockyfitness.in</div>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="icon-wrap" style="background:#DCFCE7; color:var(--whatsapp-dark);"><i
+                                    class="fab fa-whatsapp"></i></div>
+                            <div class="info">
+                                <div class="label">WhatsApp</div>
+                                <div class="value"><a href="https://wa.me/91XXXXXXXXXX" target="_blank"
+                                        style="color:var(--whatsapp-dark); font-weight:600;">Click to Chat on
+                                        WhatsApp</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Working Hours -->
+                    <h4
+                        style="font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-light); margin-bottom:12px;">
+                        Working Hours</h4>
+                    <div class="hours-table">
+                        <div class="hours-row"><span class="day">Monday – Friday</span><span class="time">6:00 AM –
+                                10:00 PM</span></div>
+                        <div class="hours-row"><span class="day">Saturday</span><span class="time">6:00 AM – 9:00
+                                PM</span></div>
+                        <div class="hours-row"><span class="day">Sunday</span><span class="time">7:00 AM – 6:00
+                                PM</span></div>
+                        <div class="hours-row"><span class="day">Public Holidays</span><span class="time">8:00 AM – 4:00
+                                PM</span></div>
+                    </div>
+
+                    <!-- Map -->
+                    <h4
+                        style="font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-light); margin-bottom:12px;">
+                        Find Us on the Map</h4>
+                    <div class="map-placeholder">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83931577275!2d77.06889986853435!3d28.52725015017589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sNew+Delhi%2C+Delhi!5e0!3m2!1sen!2sin!4v1513066025718!5m2!1sen!2sin"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="Rocky Fitness Center Location">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section class="section section-alt" style="padding:56px 0;">
+        <div class="container" style="text-align:center;">
+            <h2 style="margin-bottom:12px; font-size:1.6rem;">Prefer to Chat Instantly?</h2>
+            <p style="color:var(--text-light); margin-bottom:24px;">We respond to WhatsApp messages within minutes
+                during working hours.</p>
+            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+                <i class="fab fa-whatsapp"></i> Send WhatsApp Message
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="nav-logo-icon">🏋️</div>
+                        <div class="nav-logo-text"><span class="brand">Rocky Fitness</span><span
+                                class="tagline">Center</span></div>
+                    </a>
+                    <p>Your premier destination for fitness excellence.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/91XXXXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Home</a>
+                        </li>
+                        <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i>
+                                Classes</a></li>
+                        <li><a href="trainers.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i>
+                                Trainers</a></li>
+                        <li><a href="membership.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i>
+                                Membership</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Blog</a>
+                        </li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i>
+                                Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Classes</h4>
+                    <ul class="footer-links">
+                        <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i>
+                                Strength Training</a></li>
+                        <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Cardio
+                                Blast</a></li>
+                        <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Yoga &
+                                Flexibility</a></li>
+                        <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> HIIT
+                                Training</a></li>
+                        <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Boxing
+                                & Combat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-items">
+                        <div class="footer-contact-item"><i class="fas fa-map-marker-alt icon"></i><span>123 Fitness
+                                Avenue, Sector 14, New Delhi — 110001</span></div>
+                        <div class="footer-contact-item"><i class="fas fa-phone-alt icon"></i><span>+91 98765
+                                43210</span></div>
+                        <div class="footer-contact-item"><i
+                                class="fas fa-envelope icon"></i><span>hello@rockyfitness.in</span></div>
+                        <div class="footer-contact-item"><i class="fas fa-clock icon"></i><span>Mon–Sat: 6 AM – 10
+                                PM<br />Sunday: 7 AM – 6 PM</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rocky Fitness Center. All rights reserved.</p>
+                <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="floating-wa"><i
+            class="fab fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
