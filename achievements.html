@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Achievements Gallery — Rocky Fitness Center. See our members' transformations, competition wins, and milestones." />
+  <title>Achievements Gallery — Rocky Fitness Center</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ===== ACHIEVEMENTS PAGE STYLES ===== */
+
+    .achievements-hero {
+      background: linear-gradient(135deg, #0F0F1A 0%, #1A0A2E 50%, #0D0D1F 100%);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .achievements-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 50%, rgba(234, 179, 8, 0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 70%);
+    }
+
+    .achievements-hero .breadcrumb {
+      position: relative;
+      z-index: 1;
+    }
+
+    .achievements-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #FBBF24, #F59E0B, #EF4444);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .achievements-hero p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Stats Bar */
+    .achievements-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+      padding: 28px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ach-stat {
+      text-align: center;
+    }
+
+    .ach-stat .num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FBBF24, #F59E0B);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ach-stat .label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+    }
+
+    /* Filter Tabs */
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .filter-tab {
+      padding: 10px 24px;
+      border-radius: 50px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-light);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: inherit;
+    }
+
+    .filter-tab:hover,
+    .filter-tab.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(239, 68, 68, 0.3);
+    }
+
+    /* Achievement Cards Grid */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    /* === THE BIG CARD ANIMATION === */
+    .achievement-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+      animation: cardFadeIn 0.6s ease both;
+    }
+
+    .achievement-card:nth-child(1) { animation-delay: 0.05s; }
+    .achievement-card:nth-child(2) { animation-delay: 0.1s; }
+    .achievement-card:nth-child(3) { animation-delay: 0.15s; }
+    .achievement-card:nth-child(4) { animation-delay: 0.2s; }
+    .achievement-card:nth-child(5) { animation-delay: 0.25s; }
+    .achievement-card:nth-child(6) { animation-delay: 0.3s; }
+    .achievement-card:nth-child(7) { animation-delay: 0.35s; }
+    .achievement-card:nth-child(8) { animation-delay: 0.4s; }
+
+    @keyframes cardFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(32px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(239, 68, 68, 0.3);
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+
+    /* Photo area */
+    .achievement-photo {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1A1A2E, #16213E);
+    }
+
+    .achievement-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .achievement-card:hover .achievement-photo img {
+      transform: scale(1.08);
+    }
+
+    /* Photo overlay */
+    .achievement-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .achievement-card:hover .achievement-photo-overlay {
+      opacity: 1;
+    }
+
+    /* Category Badge */
+    .achievement-category {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      backdrop-filter: blur(8px);
+      z-index: 2;
+    }
+
+    .achievement-category.transformation { background: rgba(239, 68, 68, 0.85); color: #fff; }
+    .achievement-category.competition { background: rgba(234, 179, 8, 0.9); color: #000; }
+    .achievement-category.milestone { background: rgba(99, 102, 241, 0.85); color: #fff; }
+    .achievement-category.team { background: rgba(16, 185, 129, 0.85); color: #fff; }
+    .achievement-category.award { background: rgba(249, 115, 22, 0.85); color: #fff; }
+
+    /* Year badge top-right */
+    .achievement-year {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(8px);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      z-index: 2;
+    }
+
+    /* Shine effect */
+    .achievement-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.06), transparent);
+      transform: skewX(-15deg);
+      transition: left 0.6s ease;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .achievement-card:hover::before {
+      left: 130%;
+    }
+
+    /* Card body */
+    .achievement-body {
+      padding: 20px 22px 22px;
+    }
+
+    .achievement-trophy {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .achievement-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .achievement-desc {
+      font-size: 0.845rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .achievement-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .achievement-person {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .achievement-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), #DC2626);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .achievement-person-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .achievement-like {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-light);
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .achievement-like:hover,
+    .achievement-like.liked {
+      color: #EF4444;
+    }
+
+    .achievement-like i {
+      font-size: 0.9rem;
+      transition: transform 0.2s;
+    }
+
+    .achievement-like:hover i {
+      transform: scale(1.25);
+    }
+
+    /* Featured card styles (large) */
+    .achievement-card.featured {
+      grid-column: span 2;
+    }
+
+    .achievement-card.featured .achievement-photo {
+      aspect-ratio: 16/7;
+    }
+
+    /* Glowing border on hover for featured */
+    .achievement-card.featured:hover {
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(234, 179, 8, 0.5);
+      border-color: rgba(234, 179, 8, 0.5);
+    }
+
+    /* Placeholder gym photo for cards */
+    .gym-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      background: linear-gradient(135deg, #1A1A2E, #16213E);
+    }
+
+    /* CTA */
+    .achievements-cta {
+      text-align: center;
+      margin-top: 64px;
+      padding: 60px 32px;
+      background: linear-gradient(135deg, rgba(239,68,68,0.08), rgba(124,58,237,0.08));
+      border-radius: 24px;
+      border: 1px solid var(--border);
+    }
+
+    .achievements-cta h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .achievements-cta p {
+      color: var(--text-light);
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .achievement-card.featured {
+        grid-column: span 1;
+      }
+      .achievements-grid {
+        grid-template-columns: 1fr;
+      }
+      .achievements-stats {
+        gap: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🏋️</div>
+        <div class="nav-logo-text">
+          <span class="brand">Rocky Fitness</span>
+          <span class="tagline">Center</span>
+        </div>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="trainers.html">Trainers</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="achievements.html" class="active">Achievements</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="nav-whatsapp" title="Chat on WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="membership.html" class="btn btn-primary btn-sm">Join Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="classes.html">Classes</a>
+    <a href="trainers.html">Trainers</a>
+    <a href="membership.html">Membership</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="mobile-wa">
+      <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+  </div>
+
+  <!-- ACHIEVEMENTS HERO -->
+  <section class="achievements-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right" style="font-size:0.6rem"></i>
+        <span>Achievements</span>
+      </div>
+      <h1>🏆 Our Achievements Gallery</h1>
+      <p>Celebrating every transformation, competition win, and milestone — these are the stories that inspire us every day.</p>
+      <div class="achievements-stats">
+        <div class="ach-stat">
+          <div class="num">500+</div>
+          <div class="label">Members Transformed</div>
+        </div>
+        <div class="ach-stat">
+          <div class="num">30+</div>
+          <div class="label">Years Experience</div>
+        </div>
+        <div class="ach-stat">
+          <div class="num">50+</div>
+          <div class="label">Competitions Won</div>
+        </div>
+        <div class="ach-stat">
+          <div class="num">100%</div>
+          <div class="label">Natural Training</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS GALLERY -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-tab active" onclick="filterCards('all', this)">All</button>
+        <button class="filter-tab" onclick="filterCards('transformation', this)">Transformations</button>
+        <button class="filter-tab" onclick="filterCards('competition', this)">Competitions</button>
+        <button class="filter-tab" onclick="filterCards('milestone', this)">Milestones</button>
+        <button class="filter-tab" onclick="filterCards('team', this)">Team Moments</button>
+        <button class="filter-tab" onclick="filterCards('award', this)">Awards</button>
+      </div>
+
+      <!-- Achievement Cards Grid -->
+      <div class="achievements-grid" id="achievementsGrid">
+
+        <!-- FEATURED: 30 Year Anniversary -->
+        <div class="achievement-card featured" data-category="milestone">
+          <div class="achievement-photo">
+            <img src="IMG_5823.jpg" alt="Rocky Fitness 30 Year Anniversary" loading="lazy" />
+            <div class="achievement-photo-overlay"></div>
+            <span class="achievement-category milestone">Milestone</span>
+            <span class="achievement-year">2024</span>
+          </div>
+          <div class="achievement-body">
+            <span class="achievement-trophy">🎉</span>
+            <div class="achievement-title">30+ Years of Fitness Excellence</div>
+            <div class="achievement-desc">Rocky Fitness Center celebrates over three decades of transforming lives through 100% natural training. From a humble beginning to one of the most respected gyms in the city — this is our legacy.</div>
+            <div class="achievement-meta">
+              <div class="achievement-person">
+                <div class="achievement-avatar">R</div>
+                <div class="achievement-person-name">Rocky Singh — Founder</div>
+              </div>
+              <div class="achievement-like" onclick="toggleLike(this)">
+                <i class="fas fa-heart"></i>
+                <span>248</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Member Transformation -->
+        <div class="achievement-card" data-category="transformation">
+          <div class="achievement-photo">
+            <img src="IMG_5824.jpg" alt="Member Transformation" loading="lazy" />
+            <div class="achievement-photo-overlay"></div>
+            <span class="achievement-category transformation">Transformation</span>
+            <span class="achievement-year">2024</span>
+          </div>
+          <div class="achievement-body">
+            <span class="achievement-trophy">💪</span>
+            <div class="achievement-title">20 kg Transformation in 6 Months</div>
+            <div class="achievement-desc">An incredible natural body transformation achieved without any supplements — just hard work, discipline, and expert coaching from Sachin.</div>
+            <div class="achievement-meta">
+              <div class="achievement-person">
+                <div class="achievement-avatar" style="background:linear-gradient(135deg,#EF4444,#DC2626);">S</div>
+                <div class="achievement-person-name">Trainer: Sachin</div>
+              </div>
+              <div class="achievement-like" onclick="toggleLike(this)">
+                <i class="fas fa-heart"></i>
+                <span>186</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: State Championship -->
+        <div class="achievement-card" data-category="competition">
+          <div class="achievement-photo">
+            <img src="IMG_5825.jpg" alt="State Bodybuilding Championship" loading="lazy" />
+            <div class="achievement-photo-overlay"></div>
+            <span class="achievement-category competition">Competition</span>
+            <span class="achievement-year">2023</span>
+          </div>
+          <div class="achievement-body">
+            <span class="achievement-trophy">🥇</span>
+            <div class="achievement-title">State Bodybuilding Championship — Gold</div>
+            <div class="achievement-desc">Our member won the State Natural Bodybuilding Championship. A testament to what discipline, natural training, and Rocky's elite coaching can achieve.</div>
+            <div class="achievement-meta">
+              <div class="achievement-person">
+                <div class="achievement-avatar" style="background:linear-gradient(135deg,#7C3AED,#6D28D9);">R</div>
+                <div class="achievement-person-name">Trainer: Rocky Singh</div>
+              </div>
+              <div class="achievement-like" onclick="toggleLike(this)">
+                <i class="fas fa-heart"></i>
+                <span>312</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Gym Equipment Upgrade -->
+        <div class="achievement-card" data-category="milestone">
+          <div class="achievement-photo">
+            <img src="IMG_5826.jpg" alt="American Equipment Installation" loading="lazy" />
+            <div class="achievement-photo-overlay"></div>
+            <span class="achievement-category milestone">Milestone</span>
+            <span class="achievement-year">2023</span>
+          </div>
+          <div class="achievement-body">
+            <span class="achievement-trophy">🇺🇸</span>
+            <div class="achievement-title">Full American Equipment Upgrade</div>
+            <div class="achievement-desc">We invested in a complete fleet of premium American-manufactured machines. No Chinese or Vietnamese equipment — only the best for our members.</div>
+            <div class="achievement-meta">
+              <div class="achievement-person">
+                <div class="achievement-avatar" style="background:linear-gradient(135deg,#D97706,#F59E0B);">C</div>
+                <div class="achievement-person-name">Team: Rocky Fitness</div>
+              </div>
+              <div class="achievement-like" onclick="toggleLike(this)">
+                <i class="fas fa-heart"></i>
+                <span>154</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: 500 Members Milestone -->
+        <div class="achievement-card" data-category="milestone">
+          <div class="achievement-photo">
+            <img src="IMG_5827.jpg" alt="500 Members Community Milestone" loading="lazy" />
+            <div class="achievement-photo-overlay"></div>
+            <span class="achievement-category milestone">Milestone</span>
+            <span class="achievement-year">2024</span>
+          </div>
+          <div class="achievement-body">
+            <span class="achievement-trophy">🎯</span>
+            <div class="achievement-title">500+ Active Members Community</div>
+            <div class="achievement-desc">We crossed the 500 active members milestone! A growing family of dedicated fitness enthusiasts who believe in natural, sustainable transformation.</div>
+            <div class="achievement-meta">
+              <div class="achievement-person">
+                <div class="achievement-avatar" style="background:linear-gradient(135deg,#059669,#0891B2);">C</div>
+                <div class="achievement-person-name">Rocky Fitness Family</div>
+              </div>
+              <div class="achievement-like" onclick="toggleLike(this)">
+                <i class="fas fa-heart"></i>
+                <span>421</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Team Event -->
+        <div class="achievement-card" data-category="team">
+          <div class="achievement-photo">
+            <img src="IMG_5828.jpg" alt="Annual Fitness Challenge Event" loading="lazy" />
+            <div class="achievement-photo-overlay"></div>
+            <span class="achievement-category team">Team</span>
+            <span class="achievement-year">2024</span>
+          </div>
+          <div class="achievement-body">
+            <span class="achievement-trophy">🏅</span>
+            <div class="achievement-title">Annual Rocky Fitness Challenge</div>
+            <div class="achievement-desc">Our annual in-house fitness challenge brought together members of all levels in a day of competition, celebration, and community spirit.</div>
+            <div class="achievement-meta">
+              <div class="achievement-person">
+                <div class="achievement-avatar" style="background:linear-gradient(135deg,#6366F1,#8B5CF6);">T</div>
+                <div class="achievement-person-name">All Trainers &amp; Members</div>
+              </div>
+              <div class="achievement-like" onclick="toggleLike(this)">
+                <i class="fas fa-heart"></i>
+                <span>289</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7: Award -->
+        <div class="achievement-card" data-category="award">
+          <div class="achievement-photo">
+            <img src="IMG_5829.jpg" alt="Best Gym Award" loading="lazy" />
+            <div class="achievement-photo-overlay"></div>
+            <span class="achievement-category award">Award</span>
+            <span class="achievement-year">2023</span>
+          </div>
+          <div class="achievement-body">
+            <span class="achievement-trophy">🏆</span>
+            <div class="achievement-title">Best Natural Fitness Center — City Award</div>
+            <div class="achievement-desc">Recognized as the city's best gym for natural training and genuine member transformations. A proud moment for our entire team and community.</div>
+            <div class="achievement-meta">
+              <div class="achievement-person">
+                <div class="achievement-avatar" style="background:linear-gradient(135deg,#F59E0B,#EAB308);">R</div>
+                <div class="achievement-person-name">Rocky Fitness Center</div>
+              </div>
+              <div class="achievement-like" onclick="toggleLike(this)">
+                <i class="fas fa-heart"></i>
+                <span>503</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8: Member Weight Loss -->
+        <div class="achievement-card" data-category="transformation">
+          <div class="achievement-photo">
+            <img src="IMG_5830.jpg" alt="Member Training Session" loading="lazy" />
+            <div class="achievement-photo-overlay"></div>
+            <span class="achievement-category transformation">Transformation</span>
+            <span class="achievement-year">2024</span>
+          </div>
+          <div class="achievement-body">
+            <span class="achievement-trophy">🔥</span>
+            <div class="achievement-title">Elite Training Session with Chiku</div>
+            <div class="achievement-desc">Advanced conditioning and hypertrophy training in action. Chiku's natural programming delivers elite results — no shortcuts, no supplements, just pure dedication.</div>
+            <div class="achievement-meta">
+              <div class="achievement-person">
+                <div class="achievement-avatar" style="background:linear-gradient(135deg,#D97706,#F59E0B);">C</div>
+                <div class="achievement-person-name">Trainer: Chiku</div>
+              </div>
+              <div class="achievement-like" onclick="toggleLike(this)">
+                <i class="fas fa-heart"></i>
+                <span>217</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Section -->
+      <div class="achievements-cta">
+        <h2>Be Our Next Achievement</h2>
+        <p>Join Rocky Fitness Center and start writing your own success story. Real results, natural methods, expert guidance.</p>
+        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+          <a href="membership.html" class="btn btn-primary btn-lg"><i class="fas fa-rocket"></i> Join Now</a>
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+            <i class="fab fa-whatsapp"></i> WhatsApp Us
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon">🏋️</div>
+            <div class="nav-logo-text"><span class="brand">Rocky Fitness</span><span class="tagline">Center</span></div>
+          </a>
+          <p>Your premier destination for fitness excellence. Modern American-made equipment, certified trainers, and a community that never gives up.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/91XXXXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Home</a></li>
+            <li><a href="classes.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Classes</a></li>
+            <li><a href="trainers.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Trainers</a></li>
+            <li><a href="membership.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Membership</a></li>
+            <li><a href="achievements.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Achievements</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Plans</h4>
+          <ul class="footer-links">
+            <li><a href="membership.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Monthly — ₹2,500</a></li>
+            <li><a href="membership.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> 3 Months — ₹5,500</a></li>
+            <li><a href="membership.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> 6 Months — ₹10,000</a></li>
+            <li><a href="membership.html"><i class="fas fa-chevron-right" style="font-size:0.65rem"></i> Annual — ₹18,000</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-items">
+            <div class="footer-contact-item"><i class="fas fa-map-marker-alt icon"></i><span>123 Fitness Avenue, Sector 14, New Delhi — 110001</span></div>
+            <div class="footer-contact-item"><i class="fas fa-phone-alt icon"></i><span>+91 98765 43210</span></div>
+            <div class="footer-contact-item"><i class="fas fa-envelope icon"></i><span>hello@rockyfitness.in</span></div>
+            <div class="footer-contact-item"><i class="fas fa-clock icon"></i><span>Morning: 6 AM – 10:30 AM<br />Evening: 4 PM – 10 PM<br />Sunday: Closed</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Rocky Fitness Center. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="floating-wa" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Filter cards by category
+    function filterCards(category, btn) {
+      // Update active tab
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.achievement-card');
+      cards.forEach((card, i) => {
+        const cardCat = card.getAttribute('data-category');
+        const show = category === 'all' || cardCat === category;
+
+        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        if (show) {
+          card.style.display = '';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = '';
+          }, i * 40);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.92)';
+          setTimeout(() => { card.style.display = 'none'; }, 300);
+        }
+      });
+    }
+
+    // Toggle like
+    function toggleLike(el) {
+      el.classList.toggle('liked');
+      const countEl = el.querySelector('span');
+      const current = parseInt(countEl.textContent);
+      countEl.textContent = el.classList.contains('liked') ? current + 1 : current - 1;
+    }
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.achievement-card').forEach(card => {
+      card.style.animationPlayState = 'paused';
+      observer.observe(card);
+    });
+  </script>
+</body>
+
+</html>
