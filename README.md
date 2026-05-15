@@ -6,7 +6,7 @@ This is the source code for the official website of Rocky Fitness Center, a mode
 
 ## 🌐 Live Demo
 
-Check out the live website here: **[Rocky Fitness Center](https://rockyfitnesscenterin.vercel.app)**
+Check out the live website here: **[Rocky Fitness Center](https://rockyfitnesscenter.in)**
 
 ## 🏋️ Features
 
